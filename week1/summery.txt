@@ -1,0 +1,67 @@
+ิสิ่งที่เรียนจาก week1
+- Array คือ Data sturcture ที่เรียงข้อมูลหลายๆตัว ไว้ในตัวแปรเดียว สามารถเข้าถึงได้ผ่าน index
+    const car = ["BMW" , true , 2 , null]
+    console.log(car.length); บอกจำนวนทั้งหมดของ Array
+    console.log(car.indexOf("BMW")) บอกค่า index ของค่าใน array
+    console.log(`First Item: ${car[0]}`); บอกค่าแรกใน array
+    console.log(`Last Item: ${car[car.length - 1]}`); บอกค่าสุดท้ายใน array
+
+    car.push("poon") เพิ่มค่าใน array
+    car.pop() ลบค่าสุดท้ายใน array
+    car.shift() ลบค่าแรกใน array
+    delete car[2] ลบค่าใน index นั่นๆ
+
+    const car = [
+        {type:"BMW" , model:"330d" , year:2019} ,
+        {type:"Honda" , model:"civic" , year:2019} ,
+        {type:"Toyota" , model:"camry" , year:2025}
+    ]
+    object ใน array 
+
+    const manyType = [
+        [1 , 2 , 3] ,
+        ["Poon" , "Apinan" , "Mokun"] ,
+        [true , false]
+    ]
+
+    array ใน array 
+
+    const cars = {
+        name: "Porche",
+        model:"911 GT3",
+        year: [
+            2019 , 2020
+        ]
+    }
+
+    array ใน object
+
+- การสร้้าง array
+    Array literals
+        const arr = [1 , 2 , 3]
+        console.log(arr); //[1 , 2 , 3]
+    
+    ... spread
+        let a = [1 , 2 , 3]
+        let b = [0 , ...a , 4]
+        console.log(b); //[0 , 1 , 2 , 3 , 4]
+    
+    Array() Constructor
+        const arr1 = new Array()
+        const arr2 = new Array(20)
+        const arr3 = new Array(1,2,3,4,5,6)
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr3);
+    
+    Array.of() factory menthod
+        const ar1 = Array.of()
+        const ar2 = Array.of(20)
+        const ar3 = Array.of(1,2,3,4,5,6)
+        console.log(ar1);
+        console.log(ar2);
+        console.log(ar3);
+
+        const i = Array.of(1,2,3)
+        const k = Array.from(i)
+        console.log(k);
