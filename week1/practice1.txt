@@ -1,0 +1,29 @@
+1.
+Write a function that takes a string and returns the number of vowels (a, e, i, o, u, both uppercase and lowercase) in the string. Handle the following edge cases:
+If the input is undefined, null, or not a string, the function should return 0.
+
+If the input string is empty, return 0.
+
+Count both uppercase and lowercase vowels.
+
+Vowels inside numbers or punctuation are ignored (only alphabetic vowels count).
+
+Examples:
+countVowels("The quick brown fox") should return 5.
+
+countVowels("JavaScript") should return 3.
+
+countVowels("HELLO") should return 2.
+
+countVowels("xyz") should return 0.
+
+countVowels("") should return 0.
+
+countVowels(undefined) should return 0.
+
+countVowels(null) should return 0.
+
+countVowels(12345) should return 0.
+
+countVowels(["array"]) should return 0.
+

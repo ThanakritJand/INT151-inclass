@@ -1,0 +1,28 @@
+Reverse the Words in a Sentence
+Write a function that takes a sentence (string) and returns a new sentence with the order of the words reversed. Handle the following edge cases:
+If the input is undefined, null, or not a string, return an empty string "".
+
+If the input string is empty, return an empty string "".
+
+Words should be reversed by order, not by reversing the letters inside them.
+
+Keep punctuation and spacing attached to the words as they appear (no cleaning required).
+
+Examples:
+reverseWords("The quick brown fox") should return "fox brown quick The".
+
+reverseWords("JavaScript is fun") should return "fun is JavaScript".
+
+reverseWords("Hi") should return "Hi".
+
+reverseWords("Well, this is unexpected!") should return "unexpected! is this Well,".
+
+reverseWords("") should return "".
+
+reverseWords(undefined) should return "".
+
+reverseWords(null) should return "".
+
+reverseWords(12345) should return "".
+
+reverseWords(["not", "a", "string"]) should return "".

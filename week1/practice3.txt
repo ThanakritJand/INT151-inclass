@@ -1,0 +1,10 @@
+Sum All Numbers in a Sentence
+Write a function that takes a sentence (string) and returns the sum of all numbers found in it. Handle the following edge cases:
+If the input is undefined, null, or not a string, return 0.
+
+If the input string is empty, return 0.
+
+Numbers can be integers or decimals, positive or negative.
+
+Words and punctuation should be ignored (only actual numbers count).
+
