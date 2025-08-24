@@ -1,0 +1,130 @@
+สิ้งที่ได้รับจาก week2
+- Object ===> เป็นการเก็บค่า Data Structure ที่เก็บไว้ในรูป key-value pair
+    - Literal => รูปแบบในการเขียน object (pattern => const para = { key:value})
+        const person = {
+            firstname: "Thanakrit" ,
+            lastname: "Jand" ,
+            age: 19 ,
+            isStudent: true ,
+            university: "kmutt"
+        }
+        -method การทำ function เข้าไปใน object เพิ่อทำให้มีลูกเล้นมากขึ้น
+            const car = {
+            model: "mc-laren" ,
+            type: "720s spider" ,
+            start: function(){
+                console.log("Starting.....");
+            } ,
+            drive: function(){
+                console.log("Driving.....");
+            } ,
+            stop: function(){
+                console.log("Stopping.....");
+            }
+        }
+
+        -Nested Object คือ object ซ้อน object
+            const company = {
+                name: "TOA" ,
+                contact: {
+                    email: "contact@toagroup.com" ,
+                    phone: "02-335-5555"
+                }
+            }
+        -Shorthand Property (เขียนสั้น)
+            const firstname = "Thanakrit"
+            const lastname = "Jand"
+
+            const user = {firstname , lastname}
+            console.log(user);
+
+    -contructor Function มีการใช้ keyword this ในการประกาศตัวแปร และ new ในการเรียกใช้ตัวแปร (สามารถสร้างได้มากกว่า1ครั้ง)
+        function Person(name , age , email){
+            this.name = name
+            this.age = age
+            this.email = email
+            this.sayhi = function(){
+                console.log(`Hi , My name is ${this.name}`);
+            }
+        }
+
+        const p1 = new Person("Max" , 19 , "Max@gmail.com")
+        const p2 = new Person("Poon" , 19 , "Poon@gmail.com")
+
+        p1.sayhi()
+        p2.sayhi()
+
+        console.log(p1);
+        console.log(p2);
+
+    -ES6 class เป็นการเขียนโค้ดที่เกี่ยวข้องกับ OOP (Object-Oriented Programming) ดูอ่านง่ายและใกล้เคียงกับภาษาอย่าง Java, C++ มากขึ้น
+        class book {
+            constructor(isbn , title){
+                this.isbn = isbn
+                this.title = title
+            }
+            getISBN(){
+                console.log(this.isbn);
+            }
+            setTitle(title){
+                this.title = title
+            }
+        }
+
+        const b1 = new book(123345 , "Max")
+        const b2 = new book(123346 , "Aom")
+
+        console.log(b1);
+        console.log(b2);
+
+    -object.create() ช่วยสร้าง object ที่มี prototype เชื่อมโยงกับ object ที่เรากำหนดเอง
+        mybook = {}
+        const journal = Object.create(mybook)
+        journal.ISSN = 12348
+        console.log(journal);
+        journal.title = "AomMaxy"
+        console.log(journal);
+        journal.page = 123
+        console.log(journal);
+
+- equal object
+    const obj1 = { id: 1, name: "Alice" };
+    const obj2 = { id: 1, name: "Alice" };
+    const obj3 = obj1;
+
+    console.log(obj1 === obj2); // false ❌ (คนละที่อยู่ใน memory)
+    console.log(obj1 === obj3); // true ✅ (อ้างถึง object เดียวกัน)
+
+    -เปรียบเทียบค่าข้างใน
+        -JSON.stringify() ==> ลำดับ key ต้องถูกต้อง
+        const obj1 = { id: 1, name: "Alice" };
+        const obj2 = { id: 1, name: "Alice" };
+
+        console.log(JSON.stringify(obj1) === JSON.stringify(obj2)); // true ✅
+
+    -Shallow equality การเช็คว่า property ระดับบนสุด (top-level keys) ของ object หรือ array มีค่าเหมือนกันหรือไม่
+        let book1 = {
+            isbn: 123456789 ,
+            title: "JavaScript"
+        }
+        let book2 = {
+            isbn: 123456789 ,
+            title: "JavaScript"
+        }
+
+        function shallowEquality(object1 , object2){
+            const key1 = object.key(object1)
+            const key2 = object.key(object2)
+
+            if(key1.length !== key2.length){
+                return false
+            }
+            for(let key of key1){
+                if(object1[key] !== object2[key]) {
+                    return false
+                }
+            }
+            return true
+        }
+
+        console.log("Shallow equality: " + shallowEquality(book1 , book2)) //True
