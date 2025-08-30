@@ -1,0 +1,44 @@
+สิ่งที่ได้รับจาก week4
+-function type  
+    - Anonymous Function => ไม่มีชื่อระบุ มักจะใช้ชั่วคราว/Callback function 
+        const word = ["Car" , "Limit" , "Present" , "discuss"]
+        const result = word.filter(w => w.length > 5)
+        console.log(result);
+
+    - Named Function => จะมีชื่อระบุชัดเจน สามารถใช้ได้เรื่อยๆ
+        function sumArr(arr){
+            let sum = 0
+            for(let i = 0; i < arr.length ; i++){
+                sum += arr[i]
+            }
+            return sum
+        }
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+- Array Method => ฟังก์ชันสำเร็จรูป ที่ JavaScript มีให้สำหรับ จัดการหรือทำงานกับข้อมูลที่อยู่ใน Array
+    - Array Iterator Method
+        - foreach()
+        - map()
+        - filter()
+        - find()
+        - findIndex()
+        - every()
+        - some()
+        - reduce()
+    - Stack and Queue Method
+        - push()
+        - pop()
+        - unshift()
+        - shift()
+    - Subarray Method
+        - slice()
+        - splice()
+        - fill()
+    - Search and Sorting Method
+        - indexOf()
+        - includes()
+        - sort()
+        - reverse()
+    - Array to String Conversation
+        - join()
