@@ -1,0 +1,30 @@
+Practice: "Library Book Management"
+Instruction:
+
+You are building a library system using ES6 Classes.
+Each book is represented by a Book class with:
+
+title (string)
+
+author (string)
+
+year (number)
+
+isAvailable (boolean)
+
+👉 Your tasks:
+
+Create a Book class with the properties above.
+
+Create an array with at least 5 book objects.
+
+Use .filter() to return only books that are available.
+
+Use .map() to return an array of strings in the format:
+"Title by Author (Year)".
+
+Use .find() to search for a book by title.
+
+Use .some() to check if there are any books written before the year 2000.
+
+Create a function getLatestBook(books) that returns the most recently published book.

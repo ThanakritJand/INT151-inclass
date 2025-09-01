@@ -18,27 +18,65 @@
 
 - Array Method => ฟังก์ชันสำเร็จรูป ที่ JavaScript มีให้สำหรับ จัดการหรือทำงานกับข้อมูลที่อยู่ใน Array
     - Array Iterator Method
-        - foreach()
-        - map()
-        - filter()
-        - find()
-        - findIndex()
-        - every()
-        - some()
-        - reduce()
+        - forEach() ===> วนซํ้าเป็น loop ใน Array
+            const fruits = ["apple", "banana", "mango"];
+            fruits.forEach(function(item, index) {
+            console.log(index, item);
+            });
+
+        - map() ===> สร้าง Array ใหม่ โดยอิงจาก array เก่า
+            const numbers = [1, 2, 3, 4];
+            const doubled = numbers.map(num => num * 2);
+            console.log(doubled); // [2, 4, 6, 8]
+
+            const users = [
+                { name: "A", age: 20 },
+                { name: "B", age: 25 },
+                { name: "C", age: 30 }
+            ];
+            const names = users.map(user => user.name);
+            console.log(names); // ["A", "B", "C"]
+
+        - filter() ===> หาค่าใน array ตามเงื่อนไขที่กำหนด
+            
+        - find() ===> หาสมาชิกตัวแรกใน array ที่ตรงเงื่อนไข
+            const numbers = [5, 12, 8, 130, 44];
+            const found = numbers.find(num => num > 10);
+            console.log(found); // 12 (ตัวแรกที่เจอมากกว่า 10)
+
+        - findIndex() ===> หา Index ของสมาชิกตัวแรกใน array ที่ตรงเงื่อนไข
+            const numbers = [5, 12, 8, 130, 44];
+            const index = numbers.findIndex(num => num > 10);
+            console.log(index); // 1 (เพราะ numbers[1] = 12)
+
+        - every() ===> ใช้ตรวจสอบว่า สมาชิกทุกตัว ในอาเรย์ ผ่านเงื่อนไขที่กำหนดหรือไม่
+            const numbers = [2, 4, 6, 8];
+            const allEven = numbers.every(num => num % 2 === 0);
+            console.log(allEven); // true
+
+        - some() ===> ใช้ตรวจสอบว่า สมาชิกบางตัว ในอาเรย์ ผ่านเงื่อนไขที่กำหนดหรือไม่
+            const numbers = [2, 4, 5, 8];
+            const allSome = numbers.some(num => num % 2 !== 0);
+            console.log(allSome); // true
+
+        - reduce() ===> สะสมค่าใน acc แล้วนำข้อมูลใน array รวมเป็นค่าเดียว
+            const numbers = [1, 2, 3, 4];
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            console.log(sum); // 10
+
     - Stack and Queue Method
-        - push()
-        - pop()
-        - unshift()
-        - shift()
+        - push() ===> เพิ่มค่าเข้าไปใน array
+        - pop() ===> ลบค่าตัวสุดท้ายใน array
+        - unshift() ===> เพิ่มค่าเข้าไปใน array
+        - shift() ===> ลบค่าตัวสุดท้ายใน array ออก
     - Subarray Method
-        - slice()
-        - splice()
-        - fill()
+        - slice() ===> ตัดช่วง Array ออกมาสร้างเป็น array ใหม่b โดยไม่แก้ไข array เดิม
+        - splice() ===> ใช้สำหรับ เพิ่ม, ลบ, หรือแทนที่สมาชิกใน array ต้นฉบับ
+        - fill() ===> แทนที่สมาชิกใน array ด้วยค่าที่กำหนด โดยสามารถเลือกช่วง index ได้
     - Search and Sorting Method
-        - indexOf()
-        - includes()
-        - sort()
-        - reverse()
+        - indexOf() ===> ใข้ค้นหา index ของสมาชิกที่กำหนด
+        - includes() ===> ใช้ตรวจสอบว่า มีค่าที่กำหนดอยู่ใน array หรือไม่
+        - sort() ===> ช้สำหรับจัดเรียงสมาชิกใน array
+        - reverse() ===> สลับลำดับสมาชิกใน array จากหลังมาหน้า
     - Array to String Conversation
-        - join()
+        - join() ===> รวมสมาชิกทั้งหมดใน array ให้เป็น string เดียว โดยสามารถกำหนดตัวคั่น (separator) ได้

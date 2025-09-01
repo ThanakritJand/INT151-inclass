@@ -36,17 +36,60 @@ function isPalindrome(word){
 
 // console.log(isPalindrome("Racecar"))  
 
-function removeDuplicates(arr){
-    if(arr === null || arr === undefined){
-        return undefined
+function reverseString(str){
+    let reverse = ""
+    for(let i = str.length - 1; i >= 0; i--){
+        reverse += str[i]
     }
-    let Arr = []
+    return reverse
+}
+// console.log(reverseString("hello"));
+
+function findMax(arr){
+    let max = ""
+    for(let i = 0;i < arr.length;i++){
+        let num = arr[i]
+        if(num > max){
+            max = num
+        }
+    }
+    return max
+}
+
+// console.log(findMax([1, 200, 9, 10, 50]));
+
+function sumArray(arr){
+    let sum = 0
+    for(let i = 0;i < arr.length;i++){
+        sum += arr[i]
+    }
+    return sum
+}
+// console.log(sumArray([1, 2, 3, 4]));
+
+function countVowels(str){
+    const Vowel = ["a" , "e" , "i" , "o" , "u" , "A" , "E" , "I" , "O" , "U"]
+    let count = 0
+    for(let i = 0;i < str.length;i++){
+        for(let j = 0;j < Vowel.length;j++){
+            if(str[i] === Vowel[j]){
+                count++
+            }
+        }
+    }
+    return `Vowels: ${count}`
+}
+
+// console.log(countVowels("apple"));
+
+function removeDuplicates(arr){
+    let num = []
     for(let i = 0;i < arr.length;i++){
         let n = arr[i]
-        if(Arr[n]){
-            Arr[n]++
-        }return Arr[n] = 1       
+        if(num !== n){
+            num.push(n)
+        }
     }
-    return Arr
+    return num
 }
-console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5]))  
+console.log(removeDuplicates([1,2,2,3,4,4,5]));

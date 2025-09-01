@@ -40,4 +40,3 @@ function sumNumbers(sentence){
     return sum
 }
 
-console.log(sumNumbers("I have 2 apples and 3 oranges"));
