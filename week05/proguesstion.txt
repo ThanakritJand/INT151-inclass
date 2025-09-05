@@ -1,0 +1,74 @@
+สิ่งที่ได้รับจาก week05
+    -JS Module ===> แบ่ง code ออกไฟล์ย่อยทำให้เรียกกลับมาใช้ได้เรื่อยๆ
+        การใช้งาน
+            // math.js 
+            export function add(a, b) {
+                return a + b;
+            }
+
+            export function multiply(a, b) {
+                return a * b;
+            }
+            // app.js
+            import { add, multiply } from './math.js';
+
+            console.log(add(2, 3));      
+            console.log(multiply(4, 5)); 
+
+            - CommonJS ===> ใช้ใน Node.js มีการใช้ require() เพื่อดึง module
+                การใช้งาน
+                // math.js
+                    // ส่งออกฟังก์ชัน
+                    function add(a, b) {
+                        return a + b;
+                    }
+
+                    function multiply(a, b) {
+                        return a * b;
+                    }
+
+                    // export ออกไป
+                    module.exports = {
+                        add,
+                        multiply
+                    };
+
+                // app.js
+                    const math = require('./math');
+
+                    console.log(math.add(2, 3));      // 5
+                    console.log(math.multiply(4, 5)); // 20
+            - ES Module ===> ใช้ได้ทั้ง Browser และ Node.js
+                การใช้งาน
+                // Export
+
+                // math.js 
+                    export function add(a, b) {
+                        return a + b;
+                    }
+
+                    // export อีกตัว
+                    export function multiply(a, b) {
+                        return a * b;
+                    }
+
+                    // export ค่าเดียวแบบ default
+                    export default function subtract(a, b) {
+                        return a - b;
+                    }
+
+                // Import 
+                
+                // app.js  
+                    // import ฟังก์ชันที่ export ปกติ
+                    import { add, multiply } from './math.js';
+
+                    // import ที่ export default → ตั้งชื่ออะไรก็ได้
+                    import subtract from './math.js';
+
+                    console.log(add(2, 3));       // 5
+                    console.log(multiply(4, 5));  // 20
+                    console.log(subtract(10, 4)); // 6
+
+                // ใช้งานใน HTML
+                    <script type="module" src="app.js"></script>
